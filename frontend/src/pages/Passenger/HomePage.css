@@ -1,0 +1,161 @@
+/* Base wrapper */
+.home-wrapper {
+  padding: 20px;
+  background-color: #121212; /* dark grey/black background */
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #e0e0e0;
+  box-sizing: border-box;
+}
+
+/* Card styling */
+.card {
+  background-color: #1e1e1e; /* slightly lighter than background */
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeUp 0.3s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2); /* subtle neon aqua accent */
+}
+
+/* Card headings */
+.search-card h2 {
+  margin-bottom: 6px;
+  color: #00ffff; /* neon aqua title */
+}
+
+.search-card .small-muted {
+  color: #a0a0a0;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+/* Form stacked vertically */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Input fields */
+.input {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #444; 
+  background-color: #1c1c1c;
+  color: #e0e0e0;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3); /* minimal neon glow */
+}
+
+/* Button styling */
+.btn {
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #007bff, #00ffff);
+  color: #121212;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #00ffff, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Buses container & grid */
+.buses-container {
+  margin-top: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+/* Center placeholder */
+.center {
+  text-align: center;
+  color: #888;
+}
+
+/* Small animation for card load */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .card {
+    padding: 20px;
+  }
+  .input {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+  .btn {
+    padding: 12px 0;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 18px;
+  }
+  .search-card h2 {
+    font-size: 20px;
+  }
+  .search-card .small-muted {
+    font-size: 0.85rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .btn {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-wrapper {
+    padding: 15px 10px;
+  }
+  .card {
+    padding: 15px;
+  }
+  .search-card h2 {
+    font-size: 18px;
+  }
+  .input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .btn {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  .buses-container {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,148 @@
+/* Navbar Specific CSS - overrides global styles */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #121212; /* Dark grey / black background */
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  position: relative;
+  z-index: 100;
+  font-family: 'Inter', sans-serif;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+}
+
+/* Logo / Brand */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #00ffff; /* Neon aqua accent */
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.navbar-logo img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 0 6px #00ffff;
+}
+
+/* Nav Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.navbar-links a {
+  color: #e0e0e0; /* Light grey text */
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(0, 255, 255, 0.1); /* subtle neon hover */
+  color: #00ffff;
+}
+
+/* User Greeting */
+.navbar-user {
+  color: #8a8f98; /* muted grey */
+  font-size: 14px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+/* Logout Button */
+.navbar-logout {
+  background: linear-gradient(90deg, #007bff, #00ffff);
+  color: #121212;
+  font-weight: 600;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #00ffff;
+  flex-shrink: 0;
+}
+
+.navbar-logout:hover {
+  box-shadow: 0 0 12px #00ffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive - tablets */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 10px 16px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-links {
+    gap: 10px;
+  }
+
+  .navbar-links a {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .navbar-logout {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .navbar-user {
+    font-size: 13px;
+  }
+}
+
+/* Responsive - mobile */
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .navbar-user {
+    align-self: flex-start;
+    font-size: 12px;
+  }
+
+  .navbar-logout {
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,68 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: white;
+  animation: fadeIn 1s ease-in-out; /* Smooth screen fade */
+  padding: 0 20px; /* small padding for small screens */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.splash-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  animation: fadeInScale 1.5s ease-in-out;
+}
+
+.splash-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a73e8;
+  opacity: 0;
+  animation: fadeInText 2s ease-in-out forwards;
+  animation-delay: 1s; /* Show text after logo */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .splash-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  .splash-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .splash-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .splash-title {
+    font-size: 20px;
+  }
+}
